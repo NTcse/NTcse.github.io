@@ -5,6 +5,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 <title>NTcse - Home</title>
+<style>
+.imgco {
+  position: relative;
+  width: 50%;
+}
+
+.image {
+  display: block;
+  width: 100px;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #FFFFFF;
+}
+
+.imgco:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
 </head>
 
 <body>
@@ -13,7 +54,12 @@
 <p> Notes written by NTcse </p>
 </div>
 <div class="container">
-  <p><a href="ABAP/abap.html">ABAP Note</a></p>
+	<div class="imgco"> 
+		<img src="img/abap.png" class="img-fluid" alt="ABAP Note"  width="100" height="100"> 
+	<div class="overlay">
+   		 <div class="text"><a href="ABAP/abap.html">ABAP Note</a></div>
+  	</div>
+	</div>
 </div>
 </body>
 
