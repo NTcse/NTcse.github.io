@@ -3,7 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<style>
+i{ color: gray;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+
 <title>NTcse - ABAP Note</title>
 </head>
 
@@ -13,12 +44,71 @@
 <p>Notes written by NTcse. <a href ="../index.html"> Go to home page</a> NTcse Note  </p>
 </div>
 <div class="container">
-  <p>Sorry no notes have been written yet. But it will be soon</p>
+  <p>Full address when retrieving and merging customer code</p>
+<button type="button" class="collapsible">Proceed as follows</button>
+<div class="content">
+  <p>Table: KNA1, ADRC.</p>
+  <p>
+    Data: KUNNR = KNA1-kunnr. <i>"Guest code</i><br>
+    Data: Address(255). <i>"Full address </i><br>
+    Data: house_num1  like adrc-house_num1, <br>
+    house_num2  like adrc-house_num2, <br>
+    street   like adrc-street, <br>
+    str_suppl3  like adrc-str_suppl3, <br>
+    location  like adrc-location,<br>
+    city2  like adrc-city2,<br>
+    city1  like adrc-city1.</p>
+  <p> select single house_num1 house_num2 adrc~street str_suppl3 location city2
+                  into (house_num1, house_num2, street, str_suppl3, location, city2 )
+                  from adrc inner join kna1 on  adrc~addrnumber = kna1~adrnr
+                  where kunnr = KUNNR.</p>
+   <p><i>"Note: Depending on how it is stored, it will concatenate complete or incomplete fields</i><br>
+	DATA tmspace(2) TYPE c. <br>
+        tmspace = ', '. "concatenation symbol <br>
+
+        Address = house_num1. <br>
+        IF house_num2 NE ''. <br>
+           concatenate Address '-' house_num2 into Address SEPARATED BY space.<br>
+        ENDIF. <br>
+        IF street NE ''.<br>
+           concatenate Address street into Address SEPARATED BY space.<br>
+        ENDIF.<br>
+        IF str_suppl3 NE ''.<br>
+           concatenate Address  str_suppl3  into Address SEPARATED BY tmspace.<br>
+        ENDIF.<br>
+        IF location NE ''.<br>
+           concatenate Address location into Address SEPARATED BY tmspace.<br>
+        ENDIF.<br>
+        IF city2 NE ''.<br>
+           concatenate Address city2 into Address SEPARATED BY tmspace.<br>
+        ENDIF.<br>
+        IF city1 NE ''.<br>
+           concatenate Address city1 into Address SEPARATED BY tmspace.<br>
+        ENDIF.<br>
+	</p>
+</div>
+
+<p>New notes will be written soon</p>
+<button type="button" class="collapsible">Proceed as follows</button>
+<div class="content">
+  <p><i>Sorry no notes have been written yet. But it will be soon</i></p>
+</div>
 </div>
 </body>
 
 <footer>
 <div class="jumbotron text-center">
+<div class="col-sm-12  align= "center">
+  <div class="spinner-grow text-muted"></div>
+  <div class="spinner-grow text-primary"></div>
+  <div class="spinner-grow text-success"></div>
+  <div class="spinner-grow text-info"></div>
+  <div class="spinner-grow text-warning"></div>
+  <div class="spinner-grow text-danger"></div>
+  <div class="spinner-grow text-secondary"></div>
+  <div class="spinner-grow text-dark"></div>
+  <div class="spinner-grow text-light"></div>
+</div>
   <div class="row">
     <div class="col-sm-12">
       <h3>Author: NTcse (GitHub.com/NTcse)</h3>
@@ -28,4 +118,20 @@
   </div>
 </div>
 </footer>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
 </html>
