@@ -8,12 +8,12 @@
 <style>
 .imgco {
   position: relative;
-  width: 50%;
+  width: 100%;
 }
 
 .image {
   display: block;
-  width: 100px;
+  width: 100%;
   height: auto;
 }
 
@@ -24,7 +24,7 @@
   left: 0;
   right: 0;
   height: 100%;
-  width: 100px;
+  width: 100%;
   opacity: 0;
   transition: .5s ease;
   background-color: #FFFFFF;
@@ -34,7 +34,7 @@
   opacity: 1;
 }
 
-.text {
+.imgco.text {
   color: white;
   font-size: 20px;
   position: absolute;
@@ -54,12 +54,38 @@
 <p> Notes written by NTcse </p>
 </div>
 <div class="container">
-	<div class="imgco"> 
+	<div class="col-sm-3" align= "center">
+		<div class="imgco"> 
 		<img src="img/abap.png" class="img-fluid" alt="ABAP Note"  width="100" height="100"> 
-	<div class="overlay">
+		<div class="overlay">
    		 <div class="text"><a href="ABAP/abap.html">ABAP Note</a></div>
-  	</div>
-	</div>
+  		</div>
+		</div>
+	 </div>
+	<div class="col-sm-3 " align= "center">
+		<div class="imgco"> 
+		<img src="img/CSharp.png" class="img-fluid" alt="C# Note"  width="100" height="100"> 
+		<div class="overlay">
+   		 <div class="text"><a href="CSharp/csharp.html">C# Note</a></div>
+  		</div>
+		</div>
+	 </div>
+	<div class="col-sm-3 " align= "center">
+		<div class="imgco"> 
+		<img src="img/google-apps-script.svg" class="img-fluid" alt="Google Apps Script Note"  width="100" height="100"> 
+		<div class="overlay">
+   		 <div class="text"><a href="GAS/gas.html">Google Apps Script Note</a></div>
+  		</div>
+		</div>
+	 </div>
+	<div class="col-sm-3 " align= "center">
+		<div class="imgco"> 
+		<img src="img/java.png" class="img-fluid" alt="Java Note"  width="100" height="100"> 
+		<div class="overlay">
+   		 <div class="text"><a href="JAVA/java.html">Java Note</a></div>
+  		</div>
+		</div>
+	 </div>
 </div>
 </body>
 
