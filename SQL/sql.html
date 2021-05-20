@@ -28,8 +28,31 @@
 #myBtn:hover {
   background-color: #555;
 }
-</style>
+i{ color: gray;
+}
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
 
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
 <title>NTcse - SQL SERVER Note</title>
 </head>
 
@@ -40,7 +63,13 @@
 <p>Share knowledge. Notes written by NTcse. <a href ="../index.html"> Go to home page</a> NTcse Note  </p>
 </div>
 <div class="container">
-  <p>Sorry no notes have been written yet. But it will be soon</p>
+	<p>New notes will be written soon</p>
+	<button type="button" class="collapsible">Proceed as follows</button>
+	<div class="content">
+  	<p><i>Sorry no notes have been written yet. But it will be soon</i></p>
+	</div>
+	</div>
+</div>
 </div>
 </body>
 
@@ -67,6 +96,20 @@
 </div>
 </footer>
 <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
 //Get the button
 var mybutton = document.getElementById("myBtn");
 
