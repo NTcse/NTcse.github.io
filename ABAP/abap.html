@@ -123,6 +123,27 @@ i{ color: gray;
 	Smartform name in Program.	
  </p>
 </div>
+<p>Insert (Append) data to Ztable by ABAP</p>
+<button type="button" class="collapsible">Proceed as follows</button>
+<div class="content">
+  <p>	 Data row: (DATA row_data TYPE data_type: struct, table,...) <br>
+	 Assign data row value (row_data-value1 = data1.)<br>
+	 Insert data into table (INSERT INTO table_insert VALUES row_data.)<br>
+	 CLEAR row_data. <br>
+	 COMMIT WORK.
+	 <i>Use LOOP to add multiple lines</i><br></p>
+  <p>Example:<br>
+	DATA: WA TYPE MARA.<br>
+	WA-MATNR = '11'.<br>
+	WA-MANDT = '300'.<br>
+	WA-BISMT = '294'.<br>
+	INSERT INTO MARA VALUES WA. <br>
+	CLEAR WA. <br>
+	IF SY-SUBRC = 0. <i>"Successful insert</i><br>
+	COMMIT WORK.<br>
+	ENDIF.<br>
+ </p>
+</div>
 <p>New notes will be written soon</p>
 <button type="button" class="collapsible">Proceed as follows</button>
 <div class="content">
