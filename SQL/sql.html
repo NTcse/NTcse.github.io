@@ -8,6 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script> 
+$(function(){
+  $("#footer").load("https://ntcse.github.io/includes/footer.html"); 
+});
+</script>
 <title>NTcse - SQL SERVER Note</title>
 <style>
 #myBtn {
@@ -91,30 +97,10 @@ i{ color: gray;
 	</div>
 </div>
 </div>
+<div id="footer"></div>
 </body>
 
-<footer>
-<div class="jumbotron text-center">
-<div class="col-sm-12  align= "center">
-  <div class="spinner-grow text-muted"></div>
-  <div class="spinner-grow text-primary"></div>
-  <div class="spinner-grow text-success"></div>
-  <div class="spinner-grow text-info"></div>
-  <div class="spinner-grow text-warning"></div>
-  <div class="spinner-grow text-danger"></div>
-  <div class="spinner-grow text-secondary"></div>
-  <div class="spinner-grow text-dark"></div>
-  <div class="spinner-grow text-light"></div>
-</div>
-  <div class="row">
-    <div class="col-sm-12">
-      <h3>Author: NTcse (GitHub.com/NTcse)</h3>
-         <p><a href="tel:0971165597">Call me.</a> <a href="https://www.facebook.com/nhuttaistu.cse">My Pages.</a>
-	<a href="mailto:nhuttai.bui@gmail.com?subject=Mail from NTcse.github.io Site">Send mail to me.</a>
-	 </p>
-  </div>
-</div>
-</footer>
+
 <script>
 var coll = document.getElementsByClassName("collapsible");
 var i;
