@@ -74,87 +74,13 @@ i{ color: gray;
 <p>Share knowledge. Notes written by NTcse. <a href ="../index.html"> Go to home page</a> NTcse Note  </p>
 </div>
 <div class="container">
-  <p>Full address when retrieving and merging customer code</p>
-<button type="button" class="collapsible">Proceed as follows</button>
-<div class="content">
-  <p>Table: KNA1, ADRC.</p>
-  <p>
-    Data: KUNNR = KNA1-kunnr. <i>"Guest code</i><br>
-    Data: Address(255). <i>"Full address </i><br>
-    Data: house_num1  like adrc-house_num1, <br>
-    house_num2  like adrc-house_num2, <br>
-    street   like adrc-street, <br>
-    str_suppl3  like adrc-str_suppl3, <br>
-    location  like adrc-location,<br>
-    city2  like adrc-city2,<br>
-    city1  like adrc-city1.</p>
-  <p> select single house_num1 house_num2 adrc~street str_suppl3 location city2
-                  into (house_num1, house_num2, street, str_suppl3, location, city2 )
-                  from adrc inner join kna1 on  adrc~addrnumber = kna1~adrnr
-                  where kunnr = KUNNR.</p>
-   <p><i>"Note: Depending on how it is stored, it will concatenate complete or incomplete fields</i><br>
-	DATA tmspace(2) TYPE c. <br>
-        tmspace = ', '. <i>"concatenation symbol</i> <br>
-
-        Address = house_num1. <br>
-        IF house_num2 NE ''. <br>
-           concatenate Address '-' house_num2 into Address SEPARATED BY space.<br>
-        ENDIF. <br>
-        IF street NE ''.<br>
-           concatenate Address street into Address SEPARATED BY space.<br>
-        ENDIF.<br>
-        IF str_suppl3 NE ''.<br>
-           concatenate Address  str_suppl3  into Address SEPARATED BY tmspace.<br>
-        ENDIF.<br>
-        IF location NE ''.<br>
-           concatenate Address location into Address SEPARATED BY tmspace.<br>
-        ENDIF.<br>
-        IF city2 NE ''.<br>
-           concatenate Address city2 into Address SEPARATED BY tmspace.<br>
-        ENDIF.<br>
-        IF city1 NE ''.<br>
-           concatenate Address city1 into Address SEPARATED BY tmspace.<br>
-        ENDIF.<br>
-	</p>
-</div>
-<p>How to find smartform driver program name</p>
-<button type="button" class="collapsible">Proceed as follows</button>
-<div class="content">
-  <p>Go to NACE transaction and select the appication are like MM, SD , FICO and select output types <br>
-	Based on the output type u can find the Program name and Smartform name in the respective Processing Routines tab option.<br></p>
-  <p>Example:<br>
-	Go to NACE transaction. <br>
-	Conditions for Output Control Choose: V1 - Sales | <i>Application - Description.</i><br>
-	Next Choose: Output types. <br>
-	Display View "Output Types" Overview Choose: ZA01 - Ordinary Orders | <i>OutputType - Name.</i><br>
-	Next double click "Processing routines" in view Dialog Structre. <br>
-	Program name in view table Processing routines <i> Medium - Program.</i> <br>
-	Smartform name in Program.	
- </p>
-</div>
-<p>Insert (Append) data to Ztable by ABAP</p>
-<button type="button" class="collapsible">Proceed as follows</button>
-<div class="content">
-  <p>	 Data row: (DATA row_data TYPE data_type: struct, table,...) <br>
-	 Assign data row value (row_data-value1 = data1.)<br>
-	 Insert data into table (INSERT INTO table_insert VALUES row_data.)<br>
-	 CLEAR row_data. <br>
-	 COMMIT WORK.
-	 <i>Use LOOP to add multiple lines</i><br></p>
-  <p>Example:<br>
-	DATA: WA TYPE MARA.<br>
-	WA-MATNR = '11'.<br>
-	WA-MANDT = '300'.<br>
-	WA-BISMT = '294'.<br>
-	INSERT INTO MARA VALUES WA. <br>
-	CLEAR WA. <br>
-	IF SY-SUBRC = 0. <i>"Successful insert</i><br>
-	COMMIT WORK.<br>
-	ENDIF.<br>
- </p>
-</div>
-<div id="Note_test"></div>
 <div id="Note1"></div>
+<div id="Note2"></div>
+<div id="Note3"></div>
+<div id="Note4"></div>
+
+
+<div id="Note_test"></div>
 <p>New notes will be written soon</p>
 <button type="button" class="collapsible">Proceed as follows</button>
 <div class="content">
