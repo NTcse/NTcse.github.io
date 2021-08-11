@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<! ntcse.ghithub.io include ABAP Note 1>
+<html>
+<head>
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+<p>How to find smartform driver program name</p>
+<button type="button" class="collapsible">Proceed as follows</button>
+<div class="content">
+  <p>Go to NACE transaction and select the appication are like MM, SD , FICO and select output types <br>
+  Based on the output type u can find the Program name and Smartform name in the respective Processing Routines tab option.<br></p>
+  <p>Example:<br>
+  Go to NACE transaction. <br>
+  Conditions for Output Control Choose: V1 - Sales | <i>Application - Description.</i><br>
+  Next Choose: Output types. <br>
+  Display View "Output Types" Overview Choose: ZA01 - Ordinary Orders | <i>OutputType - Name.</i><br>
+  Next double click "Processing routines" in view Dialog Structre. <br>
+  Program name in view table Processing routines <i> Medium - Program.</i> <br>
+  Smartform name in Program.  
+ </p>
+</div>
+</body>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+</html>
