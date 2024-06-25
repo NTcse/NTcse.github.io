@@ -1,75 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="NTcse Note. Share knowledge. Notes written by NTcse">
-<meta name="copyright" content="ntcse.github.com ">
-<meta name="author" content="ntcse.github.com">
-<link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/NTcse/NTcse.github.io/master/Logo/NTcse_ico.ico" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</script>
+
+  <script>$(function(){  $("#header").load("https://ntcse.github.io/includes/header.html"); });</script> <! include Header>
   <script>$(function(){  $("#footer").load("https://ntcse.github.io/includes/footer.html"); });</script> <! include Footer>
+
 <title>NTcse - Home</title>
-<style>
-#myBtn {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  font-size: 18px;
-  border: none;
-  outline: none;
-  background-color: gray;
-  color: white;
-  cursor: pointer;
-  padding: 15px;
-  border-radius: 4px;
-}
-#myBtn:hover {
-  background-color: #555;
-}
-.imgco {
-  position: relative;
-  width: 100%;
-}
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: #FFFFFF;
-}
-.imgco:hover .overlay {
-  opacity: 1;
-}
-.imgco.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-</style>
+
 </head>
+<div id="header"></div>
 <body>
+
 <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div class="jumbotron text-center">
  <img src="Logo/NTcse.png" class="img-fluid" alt="NTcse_Logo"  width="100" height="100">
@@ -124,25 +67,4 @@
 </div>
 <div id="footer"></div>
 </body>
-<script>
-//Get the button
-var mybutton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-</script>
 </html>
